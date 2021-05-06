@@ -36,8 +36,12 @@ body {
       color: var(--primary-color);
 }
 
-.pt {
+.pt-40 {
       padding-top: 40px;
+}
+
+.mt-10 {
+      margin-top: 10px;
 }
 
 .ml-mr-32 {
