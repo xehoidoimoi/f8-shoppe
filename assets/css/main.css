@@ -1198,3 +1198,37 @@
       font-size: 1.2rem;
       font-weight: 700;
 }
+
+/*  *------------------Pagination------------------- */
+
+.pagination-list {
+      padding-top: 48px;
+      padding-bottom: 60px;
+      display: flex;
+      list-style: none;
+      justify-content: center;
+}
+
+.pagination-item {
+      padding: 0px 12px;
+}
+
+.pagination-item__link {
+      display: block;
+      min-width: 40px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      margin-right: 8px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      font-size: 1.9rem;
+      color: #939393;
+      text-decoration: none;
+      border-radius: 2px;
+}
+
+.pagination-item__link.pagination--active {
+      color: var(--white-color);
+      background-color: var(--primary-color);
+}
