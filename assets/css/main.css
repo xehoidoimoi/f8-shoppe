@@ -1308,6 +1308,7 @@
 }
 
 .footer__bottom {
+      margin-top: 40px;
       background-color: #f5f5f5;
       text-align: center;
 }
