@@ -1,3 +1,13 @@
+/* !---------------------Tablet & PC----------------------- */
+
+@media (min-width: 740px) {
+      .header__search-wrap {
+            display: none;
+      }
+}
+
+
+
 /* !-------------------Tablet & Mobile--------------- */
 
 @media (max-width: 1023px) {
@@ -14,8 +24,6 @@
             left: 0;
             z-index: 99;
       }
-
-      
 
       .nav {
             display: none;
@@ -51,12 +59,13 @@
       }
 
       #container {
-            padding-top: var(--header-height);
+            margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
       }
 
-      .pagination-list {
-            display: none;
+      .header__sort-bar {
+            display: flex;
       }
+
 }
 
 
@@ -64,16 +73,168 @@
 
 @media (min-width: 740px) and (max-width: 1023px) {
 
+      #header {
+            z-index: 100;
+      }
+
       .header__cart {
             width: 80px;
             text-align: right;
       }
-
-
-
-
 }
 
 /* !-------------------------Mobile--------------------------- */
 
-@media (max-width: 739px) {}
+@media (max-width: 739px) {
+
+      .row {
+            margin-left: 0;
+            margin-right: 0;
+      }
+
+      .header-with-search {
+            padding: 0 18px;
+      }
+
+      /* ------------Header Search-Mobile----------------- */
+
+      .header__search-mobile {
+            display: block;
+            padding-left: 4px;
+            padding-right: 4px;
+            margin-left: 16px;
+      }
+
+      .header__search-mobile-icon {
+            font-size: 2.2rem;
+      }
+
+      .header__search-wrap {
+            background-color: var(--white-color);
+            padding: 4px 8px;
+            position: fixed;
+            top: calc(var(--header-height) + var(--header-sort-bar-height));
+            left: 0;
+            right: 0;
+            box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2);
+            transform: translateY(-95%);
+            transition: transform linear 0.2s;
+      }
+
+      .header__search-check-box:checked~.header__search-wrap {
+            transform: translateY(0%);
+      }
+
+      .header__search {
+            display: none;
+      }
+
+      .header__search.mobile {
+            display: flex;
+            border: 1px solid var(--border-color);
+      }
+
+      .header__logo {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+      }
+
+      .header__logo-link {
+            display: block;
+            line-height: 0;
+      }
+
+      .header__bar {
+            display: block;
+      }
+
+      .header__cart {
+            width: fit-content;
+      }
+
+      .overlay {
+            position: fixed;
+            top: calc(var(--header-height) + var(--header-sort-bar-height));
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.05);
+            z-index: 50;
+            display: none;
+            animation: fadeIn ease-in 0.2s;
+      }
+
+      .header__bar-check-box:checked~.overlay {
+            display: block;
+      }
+
+      .category {
+            z-index: 99;
+            top: calc(var(--header-height) + var(--header-sort-bar-height));
+            position: fixed;
+            width: 75%;
+            height: 100%;
+            padding: 0;
+            border-radius: 0px;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: all linear 0.2s;
+      }
+
+
+      .header__bar-check-box:checked~.category {
+            transform: translateX(0%);
+            opacity: 1;
+      }
+
+      .category__heading {
+            display: none;
+      }
+
+      .category__item {
+            padding-top: 14px;
+      }
+
+      .category__item:last-child::before {
+            display: block;
+      }
+
+      .category__item::before {
+            content: "";
+            position: absolute;
+            display: block;
+            border-bottom: 1px solid #e1e1e1;
+            bottom: -5px;
+            right: 0;
+            left: 0;
+      }
+
+
+      .pagination-item {
+            padding: 0;
+      }
+
+      .pagination-item__link {
+            --height: 26px;
+            font-size: 1.6rem;
+            min-width: 32px;
+            margin-right: 2px;
+      }
+
+
+
+      @keyframes slideIn {
+            from {
+                  left: -100%;
+                  opacity: 0;
+            }
+
+            to {
+                  left: 0;
+                  opacity: 1;
+            }
+      }
+
+}
